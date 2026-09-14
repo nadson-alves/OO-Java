@@ -19,8 +19,10 @@ public class Program {
         System.out.print("How many students will be entered? ");
         int n = sc.nextInt();
 
+        // Vetor de objetos Student
         Student[] vect = new Student[n];
 
+        // Cadastra os alunos e suas notas
         for (int i = 0; i < n; i++) {
 
             System.out.printf("Data for student %d:%n", i + 1);
@@ -45,6 +47,7 @@ public class Program {
 
         System.out.println("\nFinal results:");
 
+        // Calcula a média e verifica a situação de cada aluno
         for (int i = 0; i < n; i++) {
 
             double average = (

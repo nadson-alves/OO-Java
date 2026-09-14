@@ -16,8 +16,10 @@ public class Program {
         System.out.printf("How many people will be registered?");
         int n = sc.nextInt();
 
+        // Vetor de objetos Pessoa
         Pessoa[] vect = new Pessoa[n];
 
+        // Cadastra as pessoas
         for (int i = 0; i < n; i++) {
 
             System.out.printf("Data for the %dth person:%n", i + 1);
@@ -33,6 +35,7 @@ public class Program {
             vect[i] = new Pessoa(nome, idade, altura);
         }
 
+        // Soma as alturas e divide pela quantidade
         double sum = 0.0;
         for (int i = 0; i < n; i++) {
             sum += vect[i].getAltura();
@@ -42,6 +45,7 @@ public class Program {
 
         System.out.printf("AVERAGE HEIGHT: %.2f%n", avg);
 
+        // Conta pessoas com menos de 16 anos
         int count = 0;
         for (int i = 0; i < n; i++) {
             if (vect[i].getIdade() < 16) {
@@ -52,6 +56,7 @@ public class Program {
 
         System.out.printf("PEOPLE UNDER 16: %.1f%%%n", percentage);
 
+        // Mostra os nomes dos menores de 16
         for (int i = 0; i < n; i++) {
             if (vect[i].getIdade() < 16) {
                 System.out.println(vect[i].getNome());
